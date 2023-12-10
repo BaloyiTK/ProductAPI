@@ -36,7 +36,7 @@ public class ProductsController : ControllerBase
                 Name = requestDto.Name,
                 Description = requestDto.Description,
                 Price = requestDto.Price,
-                Image = requestDto.Image
+               
             };
 
             
@@ -47,7 +47,7 @@ public class ProductsController : ControllerBase
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
-                Image = product.Image
+               
             };
 
             return Ok(response);
@@ -58,7 +58,7 @@ public class ProductsController : ControllerBase
             Console.Error.WriteLine($"An unexpected error occurred: {ex}");
 
             // Return an appropriate error response
-            return StatusCode(500, "An unexpected error occurred.");
+            return StatusCode(500, $"An unexpected error occurred.: {ex}");
         }
     }
 

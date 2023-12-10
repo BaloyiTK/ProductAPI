@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProductAPI.Data;
 using ProductAPI.Repositories.Implementation;
 using ProductAPI.Repositories.Interface;
+using Microsoft.AspNetCore.Builder;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +42,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(
+    builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
 
 app.UseHttpsRedirection();
 

@@ -12,7 +12,6 @@
         // Price of the product. Using float, but consider using decimal for monetary values.
         public float Price { get; set; }
 
-        // Image URL or path associated with the product.
-        public string Image { get; set; }
+     
     }
 }
